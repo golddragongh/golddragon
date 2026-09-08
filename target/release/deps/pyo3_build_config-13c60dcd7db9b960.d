@@ -1,0 +1,14 @@
+/home/ephraim_rolingson/hw00golddragon/golddragon/target/release/deps/pyo3_build_config-13c60dcd7db9b960.d: /home/ephraim_rolingson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/pyo3-build-config-0.28.3/src/lib.rs /home/ephraim_rolingson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/pyo3-build-config-0.28.3/src/errors.rs /home/ephraim_rolingson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/pyo3-build-config-0.28.3/src/impl_.rs /home/ephraim_rolingson/hw00golddragon/golddragon/target/release/build/pyo3-build-config-10564a88cd15bd3d/out/pyo3-build-config-file.txt /home/ephraim_rolingson/hw00golddragon/golddragon/target/release/build/pyo3-build-config-10564a88cd15bd3d/out/pyo3-build-config.txt
+
+/home/ephraim_rolingson/hw00golddragon/golddragon/target/release/deps/libpyo3_build_config-13c60dcd7db9b960.rlib: /home/ephraim_rolingson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/pyo3-build-config-0.28.3/src/lib.rs /home/ephraim_rolingson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/pyo3-build-config-0.28.3/src/errors.rs /home/ephraim_rolingson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/pyo3-build-config-0.28.3/src/impl_.rs /home/ephraim_rolingson/hw00golddragon/golddragon/target/release/build/pyo3-build-config-10564a88cd15bd3d/out/pyo3-build-config-file.txt /home/ephraim_rolingson/hw00golddragon/golddragon/target/release/build/pyo3-build-config-10564a88cd15bd3d/out/pyo3-build-config.txt
+
+/home/ephraim_rolingson/hw00golddragon/golddragon/target/release/deps/libpyo3_build_config-13c60dcd7db9b960.rmeta: /home/ephraim_rolingson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/pyo3-build-config-0.28.3/src/lib.rs /home/ephraim_rolingson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/pyo3-build-config-0.28.3/src/errors.rs /home/ephraim_rolingson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/pyo3-build-config-0.28.3/src/impl_.rs /home/ephraim_rolingson/hw00golddragon/golddragon/target/release/build/pyo3-build-config-10564a88cd15bd3d/out/pyo3-build-config-file.txt /home/ephraim_rolingson/hw00golddragon/golddragon/target/release/build/pyo3-build-config-10564a88cd15bd3d/out/pyo3-build-config.txt
+
+/home/ephraim_rolingson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/pyo3-build-config-0.28.3/src/lib.rs:
+/home/ephraim_rolingson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/pyo3-build-config-0.28.3/src/errors.rs:
+/home/ephraim_rolingson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/pyo3-build-config-0.28.3/src/impl_.rs:
+/home/ephraim_rolingson/hw00golddragon/golddragon/target/release/build/pyo3-build-config-10564a88cd15bd3d/out/pyo3-build-config-file.txt:
+/home/ephraim_rolingson/hw00golddragon/golddragon/target/release/build/pyo3-build-config-10564a88cd15bd3d/out/pyo3-build-config.txt:
+
+# env-dep:CARGO_PKG_VERSION=0.28.3
+# env-dep:OUT_DIR=/home/ephraim_rolingson/hw00golddragon/golddragon/target/release/build/pyo3-build-config-10564a88cd15bd3d/out

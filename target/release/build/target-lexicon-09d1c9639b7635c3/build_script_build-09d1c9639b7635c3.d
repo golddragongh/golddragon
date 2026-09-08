@@ -1,0 +1,8 @@
+/home/ephraim_rolingson/hw00golddragon/golddragon/target/release/build/target-lexicon-09d1c9639b7635c3/build_script_build-09d1c9639b7635c3.d: /home/ephraim_rolingson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/target-lexicon-0.13.5/build.rs /home/ephraim_rolingson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/target-lexicon-0.13.5/src/data_model.rs /home/ephraim_rolingson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/target-lexicon-0.13.5/src/triple.rs /home/ephraim_rolingson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/target-lexicon-0.13.5/src/targets.rs
+
+/home/ephraim_rolingson/hw00golddragon/golddragon/target/release/build/target-lexicon-09d1c9639b7635c3/build_script_build-09d1c9639b7635c3: /home/ephraim_rolingson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/target-lexicon-0.13.5/build.rs /home/ephraim_rolingson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/target-lexicon-0.13.5/src/data_model.rs /home/ephraim_rolingson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/target-lexicon-0.13.5/src/triple.rs /home/ephraim_rolingson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/target-lexicon-0.13.5/src/targets.rs
+
+/home/ephraim_rolingson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/target-lexicon-0.13.5/build.rs:
+/home/ephraim_rolingson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/target-lexicon-0.13.5/src/data_model.rs:
+/home/ephraim_rolingson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/target-lexicon-0.13.5/src/triple.rs:
+/home/ephraim_rolingson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/target-lexicon-0.13.5/src/targets.rs:
