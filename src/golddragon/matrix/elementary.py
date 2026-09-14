@@ -73,32 +73,7 @@ def rref(matrix):
 
     return my_matrix
 
-if __name__ == "__main__":
-
-    matrix = torch.tensor([
-        [1, 3, 0, 0, 3],
-        [0, 0, 1, 0, 9],
-        [0, 0, 0, 1, -4]
-    ])
-
-    print("Original matrix:")
-    print(matrix)
-
-    matrix1 = rowswap(matrix, 0, 1)
-    print('\n')
-    print("After rowsap")
-    print(matrix1)
-
-    matrix2 = rowscale(matrix1, 0, 1/3)
-    print('\n')
-    print("After R1 = (1/3)R1:")
-    print(matrix2)
-
-    matrix3 = rowreplacement(matrix2, 0, 2, -3, 1)
-    print('\n')
-    print("After R3 = -3R1 + R3:")
-    print(matrix3)
-
-    print('\n')
-    print("RREF of original matrix:")
-    print(rref(matrix))
+# I use the three elementary row operations to compute the RREF of a matrix. The three elementary row operations are:
+# 1. Row swapping: Swap two rows of the matrix.
+# 2. Row scaling: Multiply a row by a non-zero scalar.
+# 3. Row replacement: Replace a row by the sum of that row and a scalar
