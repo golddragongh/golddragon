@@ -1,3 +1,8 @@
+import numpy as np
+import torch
+from torch import nn
+import matplotlib.pyplot as plt
+
 class LogisticRegression(nn.Module):
 
     # a.) Initialize model
