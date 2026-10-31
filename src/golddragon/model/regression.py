@@ -166,6 +166,10 @@ class CauchyRegression(nn.Module):
         self.x_std = x_train.std(dim=0, unbiased=False).clamp_min(1e-12)
         x_train = (x_train - self.x_mean) / self.x_std
 
+        # Initialize intercept near the mean target value
+        with torch.no_grad():
+            self.w0.copy_(y_train.mean())
+
         # Train
         for epoch in range(self.epochs):
             self.optimizer.zero_grad()  # Zero the gradients
