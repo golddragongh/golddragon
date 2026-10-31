@@ -7,7 +7,7 @@ class LinearRegression(nn.Module):
 
     # a.)
     def __init__(self, learning_rate=0.01, epochs=1000):
-        super().__int__()
+        super().__init__()
         self.learning_rate = float(learning_rate)
         self.epochs = int(epochs)
         # Tells model that this should be tracked as a parameter
@@ -113,3 +113,89 @@ class LinearRegression(nn.Module):
 
         plt.tight_layout()
         plt.show()
+
+
+class CauchyRegression(nn.Module):
+
+    # a.) Initialize the model with learning rate and epochs
+    def __init__(self, learning_rate=0.01, epochs=1000, c=1.0):
+        super().__init__()
+        self.learning_rate = float(learning_rate)
+        self.epochs = int(epochs)
+        self.c = float(c)
+
+        # Initialze weights for the linear model
+        self.w0 = nn.Parameter(torch.tensor(0.0, dtype = torch.float64))
+        self.w1 = nn.Parameter(torch.tensor(0.0, dtype = torch.float64))
+        self.w2 = nn.Parameter(torch.tensor(0.0, dtype = torch.float64))
+        self.w3 = nn.Parameter(torch.tensor(0.0, dtype = torch.float64))
+        self.w4 = nn.Parameter(torch.tensor(0.0, dtype = torch.float64))
+
+        # Initialize optimizer and loss function
+        self.optimizer = torch.optim.Adam(self.parameters(), lr=self.learning_rate)
+        self.loss_history = []
+        self.weight_history = []
+        self.test_r2 = None
+        self.fitted = False
+
+
+    # b.) Model Equation: y = w0 + w1*x + w2*x^2 + w3*x^3 + w4*x^4
+    def forward(self, x1, x2, x3, x4):
+        return self.w0 + self.w1 * x1 + self.w2 * x2 + self.w3 * x3 + self.w4 * x4
+
+    # c.) Cauchy Loss Function
+    def cauchy_loss(self, y_pred, y):
+        residual = y - y_pred
+        loss = ((self.c ** 2) / 2) * np.log1p(1+(residual/self.c)**2)
+        return loss.mean()
+
+    # d.) Fit the model to the training data
+    def fit(self, x_train, y_train, x_test, y_test, device="gpu"):
+        # Convert to torch tensors if not already
+        if not isinstance(x_train, torch.Tensor):
+            x_train = torch.tensor(x_train, dtype=torch.float64)
+        if not isinstance(y_train, torch.Tensor):
+            y_train = torch.tensor(y_train, dtype=torch.float64)
+        if not isinstance(x_test, torch.Tensor):
+            x_test = torch.tensor(x_test, dtype=torch.float64)
+        if not isinstance(y_test, torch.Tensor):
+            y_test = torch.tensor(y_test, dtype=torch.float64)
+
+        # Standardize training features
+        self.x_mean = x_train.mean(dim=0)
+        self.x_std = x_train.std(dim=0, unbiased=False).clamp_min(1e-12)
+        x_train = (x_train - self.x_mean) / self.x_std
+
+        # Train
+        for epoch in range(self.epochs):
+            self.optimizer.zero_grad()  # Zero the gradients
+            y_pred = self.forward(x_train[:, 0], x_train[:, 1], x_train[:, 2], x_train[:, 3])  # Forward pass
+            loss = self.cauchy_loss(y_pred, y_train)  # Compute loss
+            loss.backward()  # Backward pass
+            self.optimizer.step()  # Update parameters
+
+            # Store history for analysis
+            self.loss_history.append(loss.item())
+            self.weight_history.append([self.w0.item(), self.w1.item(), self.w2.item(), self.w3.item(), self.w4.item()])
+        self.fitted = True
+
+        # Evaluate on test set
+        with torch.no_grad():
+            y_test_pred = self.predict(x_test)
+            ss_total = torch.sum((y_test - torch.mean(y_test)) ** 2)
+            ss_residual = torch.sum((y_test - y_test_pred) ** 2)
+            self.test_r2 = 1 - (ss_residual / ss_total)
+
+    # e.) Predict using the fitted model
+    def predict(self, data):
+        if not self.fitted:
+            raise ValueError("Model must be fitted before prediction.")
+        data = torch.tensor(data, dtype=torch.float64)
+        # Apply the same standardization
+        data = (data - self.x_mean) / self.x_std
+        with torch.no_grad():
+            return self.forward(data[:, 0], data[:, 1], data[:, 2], data[:, 3])
+
+
+
+
