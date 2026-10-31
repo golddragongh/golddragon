@@ -144,10 +144,10 @@ class CauchyRegression(nn.Module):
         return self.w0 + self.w1 * x1 + self.w2 * x2 + self.w3 * x3 + self.w4 * x4
 
     # c.) Cauchy Loss Function
-def cauchy_loss(self, y_pred, y):
-    residual = y - y_pred
-    loss = ((self.c ** 2) / 2) * torch.log1p((residual / self.c)**2)
-    return loss.mean()
+    def cauchy_loss(self, y_pred, y):
+        residual = y - y_pred
+        loss = ((self.c ** 2) / 2) * torch.log1p((residual / self.c)**2)
+        return loss.mean()
 
     # d.) Fit the model to the training data
     def fit(self, x_train, y_train, x_test, y_test, device="gpu"):
